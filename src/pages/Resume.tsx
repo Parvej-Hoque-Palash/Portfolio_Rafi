@@ -4,11 +4,13 @@ import { Viewer, SpecialZoomLevel, RenderError } from "@react-pdf-viewer/core";
 import { Worker } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { useState } from "react";
+import resumeFile from '../pdf/Resume_Rafi.pdf';
+
 
 const Resume = () => {
   // In a React app, paths are resolved relative to the public directory
   // Just use the absolute path from the root of your deployed site
-  const resumeUrl = "/Resume_Rafi.pdf"; 
+  const resumeUrl = resumeFile; 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleError = (error: Error) => {
