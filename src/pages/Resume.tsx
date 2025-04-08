@@ -8,7 +8,7 @@ import { useState } from "react";
 const Resume = () => {
   // In a React app, paths are resolved relative to the public directory
   // Just use the absolute path from the root of your deployed site
-  const resumeUrl = "/src/pdf/Resume_Rafi.pdf"; 
+  const resumeUrl = "/Resume_Rafi.pdf"; 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleError = (error: Error) => {
