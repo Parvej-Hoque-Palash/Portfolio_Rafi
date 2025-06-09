@@ -21,6 +21,12 @@ const projects = [
     link: 'https://www.youtube.com/embed/Zd1ug9pdfVs?si=Vr-G6tV98mcF8nlv',
     github: 'https://github.com/Rafi0198/Computer-Vision-Based-Gesture-Controlled-Obstacle-Avoiding-BOT-'
   },
+    {
+    name: 'Gesture Controlled Drone Simulation Using Computer Vision',
+    description: 'The drone is controlled using different hand gestures, with real-time hand tracking powered by OpenCV and Mediapipe. The estimated hand landmarks are processed to generate the control commands which is then sent to the simulated drone. The flight control is handled via DroneKit on a simulated environment using SITL and ArduPilot. The target waypoint of the actual drone is mapped according to the position of the virtual copter which is dragged virtually using the finger-tip. Again, the virtual zone is mapped to a physical space of 80mx80m. As a result, the drone will not go beyond this area. Included features are (1) Hand gesture-based take off, altitude control, and RTL (Return to Launch). (2) Dynamic movement of the drone in physical space mapped based on the position of the virtual copter which is dragged with the finger-tip within the virtual zone.',
+    link: 'https://www.youtube.com/embed/ad-8fXphrLs?si=yf_0zLtn4fzxQ8UU',
+    github: 'https://github.com/Rafi0198/Gesture-Controlled-Drone-Simulation-Using-Computer-Vision'
+  },
   {
     name: 'Gesture Controlled Robotic Manipulator (2 DoF) Using Computer Vision',
     description: 'A two DoF Robotic Manipulator using micro servos that are controlled on basis of the position of the hand captured by the camera. After recognizing the position of the hand, the corresponding control commands are sent to ESP32 using serial communication.',

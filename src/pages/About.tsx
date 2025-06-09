@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
 import myphoto from '../images/myphto.webp'
+import { useState } from 'react';
 
 const About = () => {
+  const [showFull, setShowFull] = useState(false);
+
+  const toggleDescription = () => {
+    setShowFull(!showFull);
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,20 +52,30 @@ const About = () => {
 
           <div>
             <h2 className="text-2xl font-bold text-gray-800 mb-2">About Me</h2>
-            <p className="text-gray-600 leading-relaxed">
+            <div className="text-gray-600 leading-relaxed w-full break-words">
                   I am a prospective Post-Graduate student completing B.Sc in Electrical and Electronics Engineering (EEE) from the Bangladesh University of Engineering and Technology (BUET) with major in Communication & Signal Processing. I have expertise in Robotics & Automation, Computer Vision, UAV & Wireless Communication Systems having completed plenty of relavent projects. My academic thesis focused on Autonomous Traffic Monitoring & Driver Assistance Based on Computer Vision that includes the following modules:
-                  1. Detection & Classification of Traffic Signs
-                  2. Detection & Classification of Vehicles
-                  3. Recognition of Vehicle's Registration Plate
-                  4. Speed Estimation of Vehicles
-                  5. Virtual Zone Based Vehicles Counting Including Wrong Side Promt
-                  6. Virtual Zone Based Collision Avoidance Altert.
-                  7. Drawsiness & Yawn Detection of Driver
-
+            </div>
+            {showFull && (
+                <div className='w-full break-words'>
+                  <ul>
+                    <li>1. Detection & Classification of Traffic Signs</li>
+                    <li>2. Detection & Classification of Vehicles</li>
+                    <li>3. Recognition of Vehicle's Registration Plate</li>
+                    <li>4. Speed Estimation of Vehicles</li>
+                    <li>5. Virtual Zone Based Vehicles Counting Including Wrong Side Prompt</li>
+                    <li>6. Virtual Zone Based Collision Avoidance Altert</li>
+                    <li>7. Drawsiness & Yawn Detection of Driver</li>
+                  </ul>
                   Currently, my thesis work in progress to be submitted in an International Conference.
 
                   I look forward to contributing to the Robotics & Automation and Wiresless Communication Industry having the expertise I gathered ever since my undergrad period.
-            </p>
+              </div>)}
+                <button
+                onClick={toggleDescription}
+                className="text-blue-600 hover:underline font-medium"
+              >
+                {showFull ? "See less..." : "See more..."}
+              </button>
           </div>
         </motion.div>
       </div>

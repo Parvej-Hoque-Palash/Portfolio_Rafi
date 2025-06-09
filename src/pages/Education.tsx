@@ -27,7 +27,9 @@ const education = [
     ]
   },
   {
-    degree: 'HSC',
+    degree: 'Higher Secondary Certificate(HSC)',
+    group: 'Science(Physics, Mathematics, Chemistry, Biology)',
+    result: 'GPA: 5/5',
     institution: 'Cumilla Victoria Govt. College',
     location: 'Cumilla, Chattogram, Bangladesh',
     period: '2016 - 2018',
@@ -39,7 +41,9 @@ const education = [
     ]
   },
   {
-    degree: 'SSC',
+    degree: 'Secondary School Certificate(SSC)',
+    group: 'Science(Physics, Mathematics, Chemistry, Biology)',
+    result: 'GPA: 5/5',
     institution: 'Cumilla Modern High School',
     location: 'Cumilla, Chattogram, Bangladesh',
     period: '2014 - 2016',
@@ -77,6 +81,12 @@ const Education = () => {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-gray-800 mb-2">{edu.degree}</h2>
+                  {edu.group && (
+                  <h2 className="text-xl text-gray-800 mb-2"><span className='font-bold'>Group: </span>{edu.group}</h2>
+                  )}
+                  {edu.result && (
+                  <h2 className="text-xl text-gray-800 mb-2"><span className='font-bold'>Result: </span>{edu.result}</h2>
+                  )}
                   <h3 className="text-xl text-purple-600 mb-4">{edu.institution}</h3>
                   
                   <div className="flex flex-wrap gap-4 text-gray-600 mb-4">

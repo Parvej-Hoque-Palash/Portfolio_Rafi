@@ -40,12 +40,12 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const menuItems = [
     { path: '/', icon: Home, label: 'Home' },
     { path: '/about', icon: User, label: 'About' },
-    { path: '/skills', icon: Code2, label: 'Skills' },
-    { path: '/projects', icon: FolderGit2, label: 'Projects' },
+    { path: '/education', icon: GraduationCap, label: 'Education' },
     { path: '/research', icon: BookOpen, label: 'Research Work' },
+    { path: '/projects', icon: FolderGit2, label: 'Projects' },
+    { path: '/skills', icon: Code2, label: 'Skills' },
     { path: '/internship', icon: Briefcase, label: 'Internship' },
     { path: '/research_interest', icon: Settings, label: 'Research Interest & Expertise' },
-    { path: '/education', icon: GraduationCap, label: 'Education' },
     { path: '/contact', icon: Mail, label: 'Contact' },
     { path: '/resume', icon: FileText, label: 'Resume' },
   ];
