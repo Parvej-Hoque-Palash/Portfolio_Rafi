@@ -11,22 +11,25 @@ import {
   GraduationCap,
   Mail,
   FileText,
+  Layers,
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// Custom hook to check media query
-function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
+/* ------------------ Custom Hook ------------------ */
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(() =>
+    window.matchMedia(query).matches
+  );
 
   useEffect(() => {
     const media = window.matchMedia(query);
-    setMatches(media.matches);
-    const listener = (event: MediaQueryListEvent) => setMatches(event.matches);
+    const listener = (e: MediaQueryListEvent) => setMatches(e.matches);
+
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
   }, [query]);
@@ -34,6 +37,7 @@ function useMediaQuery(query: string) {
   return matches;
 }
 
+/* ------------------ Sidebar ------------------ */
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
@@ -41,53 +45,62 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { path: '/', icon: Home, label: 'Home' },
     { path: '/about', icon: User, label: 'About' },
     { path: '/education', icon: GraduationCap, label: 'Education' },
+    { path: '/experience', icon: Layers, label: 'Experience' },
     { path: '/research', icon: BookOpen, label: 'Research Work' },
     { path: '/projects', icon: FolderGit2, label: 'Projects' },
     { path: '/skills', icon: Code2, label: 'Skills' },
     { path: '/internship', icon: Briefcase, label: 'Internship' },
-    { path: '/research_interest', icon: Settings, label: 'Research Interest & Expertise' },
+    {
+      path: '/research_interest',
+      icon: Settings,
+      label: 'Research Interest & Expertise',
+    },
     { path: '/contact', icon: Mail, label: 'Contact' },
     { path: '/resume', icon: FileText, label: 'Resume' },
   ];
 
   return (
     <motion.aside
-      initial={{ x: -300 }}
-      animate={{ x: isDesktop || isOpen ? 0 : -300 }}
-      transition={{ type: 'spring', damping: 20 }}
-      className={`fixed top-0 left-0 h-full w-[300px] bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
-        isDesktop ? 'translate-x-0' : isOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}
+      initial={false}
+      animate={{
+        x: isDesktop || isOpen ? 0 : -300,
+      }}
+      transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+      className="fixed top-0 left-0 z-40 h-full w-[300px] bg-white shadow-xl"
     >
-      {/* Scrollable Container */}
-      <div className="h-full flex flex-col">
-        {/* Profile Section */}
-        <div className="p-6 text-center border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-800">Tasnimul Hoque Rafi</h2>
-          <p className="text-purple-600 font-medium">Electrical Engineer</p>
+      <div className="flex h-full flex-col">
+        {/* Profile */}
+        <div className="border-b border-gray-200 p-6 text-center">
+          <h2 className="text-2xl font-bold text-gray-800">
+            Tasnimul Hoque Rafi
+          </h2>
+          <p className="font-medium text-purple-600">
+            Electrical Engineer
+          </p>
         </div>
 
         {/* Navigation */}
         <nav className="flex-1 overflow-y-auto p-6">
-          <div className="space-y-2">
-            {menuItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                onClick={onClose}
-                className={({ isActive }) =>
-                  `flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                    isActive
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-700 hover:bg-purple-50'
-                  }`
-                }
-              >
-                <item.icon size={20} />
-                <span>{item.label}</span>
-              </NavLink>
+          <ul className="space-y-2">
+            {menuItems.map(({ path, icon: Icon, label }) => (
+              <li key={path}>
+                <NavLink
+                  to={path}
+                  onClick={!isDesktop ? onClose : undefined}
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 rounded-lg px-4 py-3 transition-colors ${
+                      isActive
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-700 hover:bg-purple-50'
+                    }`
+                  }
+                >
+                  <Icon size={20} />
+                  <span>{label}</span>
+                </NavLink>
+              </li>
             ))}
-          </div>
+          </ul>
         </nav>
       </div>
     </motion.aside>

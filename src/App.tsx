@@ -12,6 +12,7 @@ import Education from './pages/Education';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import Internship from './pages/Internship';
+import Experience from './pages/Experience';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -41,6 +42,7 @@ function App() {
             <Route path="/internship" element={<Internship />} />
             <Route path="/research_interest" element={<ResearchInterest />} />
             <Route path="/education" element={<Education />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/resume" element={<Resume />} />
           </Routes>

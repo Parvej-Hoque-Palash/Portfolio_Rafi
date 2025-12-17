@@ -53,12 +53,19 @@ const Resume = () => {
       animate={{ opacity: 1 }}
       className="max-w-4xl mx-auto mb-4"
     >
-      <div className="flex justify-between items-center mb-8">
+      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="page-title mb-0">Resume</h1>
+
         <a
           href={resumeUrl}
           download
-          className="flex items-center space-x-2 bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+          className="
+            inline-flex items-center justify-center gap-2
+            rounded-lg bg-purple-600 px-5 py-3
+            text-white font-medium
+            hover:bg-purple-700 transition-colors
+            w-full sm:w-auto
+          "
         >
           <Download size={20} />
           <span>Download PDF</span>

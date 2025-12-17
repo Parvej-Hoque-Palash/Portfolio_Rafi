@@ -5,7 +5,7 @@ const skillCategories = [
   {
     title: 'Microcontrollers',
     icon: Cpu,
-    skills: ['Arduino', 'ESP', 'STM', 'FPGA', 'Raspberry Pi'],
+    skills: ['Arduino', 'ESP', 'STM', 'FPGA', 'Raspberry Pi', 'Jetson Orin Nano'],
     color: 'bg-blue-500'
   },
   {

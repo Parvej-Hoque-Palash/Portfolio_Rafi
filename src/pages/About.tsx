@@ -44,7 +44,7 @@ const About = () => {
             <div className="space-y-3">
               <p><span className="font-semibold">Name:</span> Tasnimul Hoque Rafi</p>
               <p><span className="font-semibold">Date of Birth:</span> 1st July, 1998</p>
-              <p><span className="font-semibold">Location:</span> 607/B, Silver Zakir Palace, 2A, East Talpukurpar, Comilla</p>
+              <p><span className="font-semibold">Location:</span> 124 Avenue de Caen, Rouen-76100, France.</p>
               <p><span className="font-semibold">Nationality:</span> Italian</p>
               <p><span className="font-semibold">Email:</span> hoquerafi727@gmail.com</p>
             </div>

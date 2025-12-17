@@ -9,8 +9,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+8801988448287',
-      href: 'tel:+8801988448287'
+      value: '+33605549606',
+      href: 'tel:+33605549606'
     },
     {
       icon: Mail,
@@ -21,7 +21,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Italy',
+      value: 'Paris, France',
       href: '#'
     }
   ];
