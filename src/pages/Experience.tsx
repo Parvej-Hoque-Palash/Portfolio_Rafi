@@ -8,9 +8,11 @@ const experience = [
     company: 'CESI',
     logo: cesi_logo,
     designation: 'Research Intern',
-    period: 'September 2024 – Present',
+    period: 'September 2025- March 2026',
     location: 'Saint-Étienne-du-Rouvray, Rouen, France',
-    title: '360° LiDAR and RGB-D Camera Fusion for Mobile Industrial Robots',
+    title: '3D LiDAR and RGB-D Camera Fusion for Real-Time Robotic Perception',
+    link: 'https://www.youtube.com/embed/d9QjcBIu-P8',
+    setup: 'Intel RealSense D-435i, LDS-01, OptiTrack Motion Capture System, NVDIA Jetson Orin Nano',
     supervisors: [
       {
         name: 'Dr. Fabrice Duval',
@@ -26,10 +28,11 @@ const experience = [
       }
     ],
     responsibilities: [
-      'Performed 3D object detection using Intel RealSense D435i RGB-D camera.',
-      'Improved inference time up to 25 FPS by converting existing object detection models into lightweight architectures suitable for real-time deployment.',
-      'Deployed the complete perception system on NVIDIA Jetson Orin Nano Development Kit and established a performance benchmark.',
-      'Ongoing research on multi-sensor (360° LiDAR + RGB-D) fusion for mobile industrial robots.'
+      'Deployed real-time 3D object detection on an NVIDIA Jetson Orin Nano, achieving ~75 FPS with TensorRT.',
+      'Estimated and filtered object depth using clustering-based and instance segmentation-based approaches.',
+      'Performed camera extrinsic calibration using an OptiTrack Motion Capture System to establish ground-truth depth measurements.',
+      'Decoded 42-byte LDS-01 LiDAR data packets and performed camera–LiDAR extrinsic calibration using point-to-point correspondences and nonlinear least-squares optimization, achieving a mean re-projection error of 3.66 pixels.',
+      'Fused the LiDAR point cloud with RGB images through an early-fusion approach using the calibrated sensor transformation.',
     ]
   }
 ];
@@ -112,18 +115,37 @@ const Experience = () => {
                       ))}
                     </ul>
                   </div>
-
+                  <h4 className="font-semibold text-gray-800 mb-2">
+                    Hardware Setup:
+                  </h4>
+                  <p className="text-gray-600 mb-4">{exp.setup}</p>
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2">
                       Summary & Contributions:
                     </h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                    <ul className="list-disc list-inside space-y-1 mb-2 text-gray-600">
                       {exp.responsibilities.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
                   </div>
 
+                  <h4 className="font-semibold text-gray-800 mb-2">
+                    Youtube:
+                  </h4>
+                  {/* <p className="text-gray-600 mb-4">{exp.link}</p> */}
+                  <div className="aspect-w-16 aspect-h-12 mb-4">
+                  {exp.link && (
+                    <iframe
+                      src={exp.link}
+                      // title={project.name}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-80 rounded-lg"
+                    ></iframe>
+                  )}
+                  </div>
                 </div>
               </div>
             </div>

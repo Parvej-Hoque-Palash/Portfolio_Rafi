@@ -2,24 +2,26 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
 const education = [
-  // {
-  //   degree: 'Master of Science in Computer Science',
-  //   institution: 'Bangladesh University of Engineering and Technology',
-  //   location: 'Dhaka, Bangladesh',
-  //   period: '2019 - 2024',
-  //   description: 'Major in Communication & Signal Processing',
-  //   achievements: [
-  //     'Published 2 research papers',
-  //     'Graduated with distinction',
-  //     'Teaching Assistant for Data Structures course'
-  //   ]
-  // },
+  {
+    degree: 'Masters of Science in Mechatronics, Machine Vision and AI',
+    institution: 'Université Paris-Saclay',
+    location: 'Île-de-France',
+    period: '2026-2027',
+    description: '',
+    relevant_courses: 'Relevant courses: Advances of Mechatronic Systems, Kinematics and Dynamic Modelling of Mechatronic Systems, Modelling of Parallel Manipulators, Advanced Control of Smart Systems, Robotic System Architecture and Programming, Advances in Mechatronic Systems, Machine Learning, Advances in Machine Vision.',
+    achievements: [
+      // 'Published 2 research papers',
+      // 'Graduated with distinction',
+      // 'Teaching Assistant for Data Structures course'
+    ]
+  },
   {
     degree: 'Bachelor of Science in Electrical and Electronic Engineering',
     institution: 'Bangladesh University of Engineering and Technology',
     location: 'Dhaka, Bangladesh',
     period: '2019 - 2024',
     description: 'Major in Communication & Signal Processing',
+    relevant_courses: 'Relevant courses: Control Systems, Power Electronics, Digital Electronics, Microprocessors and Embedded Systems, Robotics and Automation, Digital Signal Processing, Microwave Engineering, Optical Communications, Radar and Satellite Communications, Wireless Communications',
     achievements: [
       // 'First Class Honours',
       // 'President of Computer Science Society',
@@ -34,6 +36,7 @@ const education = [
     location: 'Cumilla, Chattogram, Bangladesh',
     period: '2016 - 2018',
     description: '',
+    relevant_courses: '',
     achievements: [
       // 'First Class Honours',
       // 'President of Computer Science Society',
@@ -48,6 +51,7 @@ const education = [
     location: 'Cumilla, Chattogram, Bangladesh',
     period: '2014 - 2016',
     description: '',
+    relevant_courses:'',
     achievements: [
       // 'First Class Honours',
       // 'President of Computer Science Society',
@@ -101,23 +105,7 @@ const Education = () => {
                   </div>
                   
                   <p className="text-gray-600 mb-4">{edu.description}</p>
-                  {edu.degree == 'Bachelor of Science in Electrical and Electronic Engineering' && (
-                  <div className="space-y-2 mb-2">
-                    <h4 className="font-semibold text-gray-800">Relevant Courses:</h4>
-                    <div className="flex text-gray-600">
-                    Control Systems, 
-                    Power Electronics, 
-                    Digital Electronics, 
-                    Microprocessors and Embedded Systems, 
-                    Robotics and Automation, 
-                    Digital Signal Processing, 
-                    Microwave Engineering, 
-                    Optical Communications, 
-                    Radar and Satellite Communications, 
-                    Wireless Communications
-                    </div>
-                  </div>
-                  )}
+                  <p className="text-gray-600 mb-4">{edu.relevant_courses}</p>
                   <div className="space-y-2 mb-2">
                     {/* <h4 className="font-semibold text-gray-800">Key Achievements:</h4> */}
                     <ul className="list-disc list-inside space-y-1 text-gray-600">

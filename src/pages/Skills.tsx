@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
-import { Cpu, Code2, FileText, Globe, Layout } from 'lucide-react';
+import { Bot, Cpu, Code2, FileText, Globe, Layout } from 'lucide-react';
 
 const skillCategories = [
+  {
+    title: 'ROS2',
+    icon: Bot,
+    skills: ['URDF', 'RViz', 'Gazebo', 'ROS-GZ bridge', 'Robot State Publisher', 'Sensor Fusion', 'NAV2', 'SLAM', 'Mapping', 'ROS2 Control', 'MoveIT'],
+    color: 'bg-blue-500'
+  },
   {
     title: 'Microcontrollers',
     icon: Cpu,
@@ -17,7 +23,7 @@ const skillCategories = [
   {
     title: 'Simulation',
     icon: Layout,
-    skills: ['PSpice', 'PSAF', 'AutoCAD', 'Matlab/Simulink', 'Quartus', 'Keil', 'Proteus', 'SITL', 'ROS'],
+    skills: ['PSpice', 'PSAF', 'AutoCAD', 'Matlab/Simulink', 'Quartus', 'Keil', 'Proteus', 'SITL', 'Gazebo', 'Blender'],
     color: 'bg-purple-500'
   },
   {
